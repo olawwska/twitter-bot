@@ -37,8 +37,6 @@ server.use(function(req, res, next) {
     next();
 });
 
-// server.use(express.static(path.join(__dirname, 'build')));
-
 server.get('/twitterImages',(req, res) => {
     const params = {screen_name: 'Polska', tweet_mode: 'extended'};
     return client.get('statuses/user_timeline', params, function(error, tweets, response) {
@@ -63,9 +61,5 @@ server.get('/twitterImages',(req, res) => {
     });
 });
 
-// server.get('/', function (req, res) {
-//     res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
-
-server.listen(5012, () => {console.log('działa')});
+server.listen(5020, () => {console.log('działa')});
 

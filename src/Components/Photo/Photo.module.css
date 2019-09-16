@@ -1,0 +1,11 @@
+
+/**
+ * Staraj się unikac 100 w połączeniu z "vw" - może to spowodować wylanie się elementu poza stronę
+ * VW przydatne jest w określaniu mniejszych wielkości, np. 60% widoku - 60vw. Tu lepiej użyć po prostu
+ * "100%" co będzie znaczyło - 100% rodzica.
+ */
+._photo{
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+}
