@@ -36,12 +36,7 @@ class App extends React.Component {
   render(){
       return <div>
           <Header/>
-          <InfiniteScroll
-          dataLength={this.state.pictures}
-          next={fetch}
-          >
 
-          </InfiniteScroll>
           <Photo src={this.state.pictures[0]}/>
           {this.photoCreate(this.state.pictures)}
       </div>
