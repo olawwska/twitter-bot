@@ -14,16 +14,14 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
-      const fetch = () => {
-          fetch('/twitterImages')
-              .then(res => res.json())
-              .then(data => {
-                  console.log(data);
-                  this.setState({
-                      pictures: data
-                  })
-              });
-      };
+      fetch('/twitterImages')
+          .then(res => res.json())
+          .then(data => {
+              console.log(data);
+              this.setState({
+                  pictures: data
+              })
+          });
   }
 
   photoCreate = (photos) => {
@@ -35,8 +33,6 @@ class App extends React.Component {
 
   render(){
       return <div>
-          <Header/>
-
           <Photo src={this.state.pictures[0]}/>
           {this.photoCreate(this.state.pictures)}
       </div>

@@ -61,5 +61,5 @@ server.get('/twitterImages',(req, res) => {
     });
 });
 
-server.listen(5020, () => {console.log('działa')});
+server.listen(5021, () => {console.log('działa')});
 
