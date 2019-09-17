@@ -1,0 +1,17 @@
+* {
+    font-family: "Helvetica Neue";
+}
+.main-section{
+    padding-top: 300px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+.main-section__container {
+    width: 900px;
+    display: flex;
+}
+
+
+
+

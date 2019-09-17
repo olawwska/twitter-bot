@@ -1,15 +1,14 @@
 import React from 'react';
-import '../App/App.css';
-
-import styles from './Photo.module.css';
+import './Photo.css'
 
 
 class Photo extends React.Component {
   render(){
 
     return (
-        <img src={this.props.src}></img>
-
+          <div>
+            <img src={this.props.src} alt={this.props.alt}></img>
+          </div>
     )
   }
 }

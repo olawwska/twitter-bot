@@ -9,7 +9,6 @@
     "moment": "^2.24.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-infinite-scroll-component": "^4.5.3",
     "react-scripts": "3.1.1",
     "twitter": "^1.7.1"
   },
@@ -17,9 +16,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "svgr": "svgr -d src/Icons/ assets/"
   },
-  "proxy": "http://localhost:5021",
+  "proxy": "http://localhost:5026",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -34,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@svgr/cli": "^4.3.2"
   }
 }

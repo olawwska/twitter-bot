@@ -1,12 +1,20 @@
 import React from 'react';
 
-import styles from './Header.module.css';
+import Twitter from '../../Icons/Twitter';
+import './Header.css'
 
-export default class Header extends React.Component{
-    render(){
-        return (
-            <header>
-            </header>
-        )
-    }
+
+class Header extends React.Component {
+  render(){
+
+    return (
+          <div className='header'>
+              <div className='header__logo'>
+                  <Twitter width="100px" height="100px" />
+                  <h1>{this.props.text}</h1>
+              </div>
+          </div>
+    )
+  }
 }
+export default Header;

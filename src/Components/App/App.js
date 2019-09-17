@@ -1,42 +1,65 @@
 import React from 'react';
 import './App.css';
-import InfiniteScroll from 'react-infinite-scroll-component';
-
 
 import Photo from '../Photo/Photo';
 import Header from '../Header/Header';
+
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      pictures: []
+        loading: true,
+        title: 'Loading...',
+        pictures: []
     }
   }
+
   componentDidMount() {
-      fetch('/twitterImages')
-          .then(res => res.json())
-          .then(data => {
-              console.log(data);
-              this.setState({
-                  pictures: data
-              })
-          });
-  }
+    fetch('/twitterImages')
+      .then(res => res.json())
+      .then(data => {
+          this.setState({
+              loading: false,
+              title: 'Twitter Poland',
+              pictures: data
+          })
+      })
+        .catch(err => {
+            this.setState({
+                loading: false,
+                title: 'Brak informacji...'
+            })
+        })
+    }
 
   photoCreate = (photos) => {
-      console.log('działa');
-    photos.map((picture) => {
-        return <Photo src={picture}/>
+    return photos.map((picture) => {
+         return <Photo src={picture}
+                        key={picture}
+                        alt={picture}/>
     })
   };
 
   render(){
+      const {loading, title, pictures} = this.state;
+
+      if (loading) {
+          return <Header text={title}/>;
+      }
+
       return <div>
-          <Photo src={this.state.pictures[0]}/>
-          {this.photoCreate(this.state.pictures)}
+          <Header text={title}/>
+          <div className={'main-section'}>
+              <div className={'main-section__container'}>
+                  <div>
+                      {this.photoCreate(pictures)}
+                  </div>
+              </div>
+          </div>
+          <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
       </div>
-  }
+    }
 }
 
 export default App;
